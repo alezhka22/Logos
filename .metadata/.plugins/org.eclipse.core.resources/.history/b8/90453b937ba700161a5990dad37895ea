@@ -1,0 +1,98 @@
+package hw2;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		task1();
+		task2();
+		task3();
+		task4();
+		task5();
+		task6();
+		task7();
+		task8();
+	}
+	
+	static void task1(){
+		int a = 1000;
+		while (a < 10000) {
+			System.out.println(a);
+			a = a + 4;
+		}
+	}
+	
+	static void task2(){
+		int b1 = 1;
+		int b2 = 1;
+		while(b1<55){
+			System.out.println(b2);
+			b1 = b1 + 1;
+			b2 = b2 + 2;
+		}
+	}
+	
+	static void task3(){
+		int c = 90;
+		while(c > 0){
+			System.out.println(c);
+			c = c - 5;
+		}
+	}
+	static void task4(){
+		int d1 = 1;
+		int d2 = 2;
+		while (d1 < 20){
+			System.out.println(d2);
+			d2 = d2 * 2;
+			d1 = d1 + 1;
+		}
+	}
+	static void task5(){
+		int e = 2;
+		while(e < 10000){
+			System.out.println(e);
+			e = 2 * e;
+		}
+	}
+	static void task6(){
+		int f = -166;
+		for(f=-166; f < 100; f = 2 * f + 200){
+			if(f>-100&&(f<-9||f>9)){
+				System.out.println(f);
+			}
+		}
+	}
+	
+	static void task7(){
+		int n;
+		int g;
+        do {
+            Scanner scan = new Scanner(System.in);
+            System.out.print("¬вед≥ть число: ");
+            n = scan.nextInt();
+            g = 1;
+            for (int i = 2; i <= n; i++){
+            	g = g * i;
+            	System.out.println(g);
+            }
+            if (n == 0 || n == 1){
+            	System.out.println(g);
+            }
+            if(n < 0){
+            System.out.println("¬ведено хибне число!");
+            }
+        } while (n < 0);
+   	}
+	static void task8(){
+		Scanner scan = new Scanner(System.in);
+        System.out.print("¬вед≥ть число: ");
+        double h = scan.nextDouble();
+        for(double i = 1; i <= h; i++){
+            if ((h % i) == 0){
+               System.out.println(i);
+             }
+         }
+	}
+}

@@ -1,0 +1,191 @@
+package hw4;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Завдання 1");
+		int[] array1 = create(10);
+		add(array1);
+		print(array1);
+		println(array1);
+		System.out.println("Завдання 2");
+		int[] array2 = create(50);
+		add2(array2);
+		print(array2);
+		revers(array2);
+		System.out.println("Завдання 3");
+		int[] array3 = createRandom(15, 0, 9);
+		print(array3);
+		count(array3);
+		System.out.println("Завдання 4");
+		int[] array4 = createRandom(8, 1, 10);
+		print(array4);
+		change(array4);
+		print(array4);
+		System.out.println("Завдання 5");
+		int[] array5a = createRandom(5, 0, 5);
+		int[] array5b = createRandom(5, 0, 5);
+		print(array5a);
+		print(array5b);
+		average(array5a, array5b);
+		System.out.println("Завдання 6");
+		int[] array6 = createRandom(4, 10, 99);
+		print(array6);
+		increase(array6);
+		System.out.println("Завдання 7");
+		int[] array7 = create(20);
+		fibonacci(array7);
+		System.out.println("Завдання 8");
+		int[] array8 = createRandom(12, -15, 15);
+		print(array8);
+		maximal(array8);
+		System.out.println("Завдання 9");
+		int[] array9a = createRandom(10, 1, 9);
+		int[] array9b = createRandom(10, 1, 9);
+		printInt(array9a);
+		printInt(array9b);
+		double[] array9c = createDouble(array9a, array9b);
+	}
+	//1.
+	static int[] create(int length){
+		int[] array = new int[length];
+		return array;
+	}
+	static void add(int[] array){
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (i + 1) * 2;
+		}
+	}
+	static void print(int[] array){
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i]+" ");
+		}
+		System.out.println();
+	}
+	static void println(int[] array){
+		for (int i = 0; i < array.length; i++) {
+			System.out.println(array[i]);
+		}
+		System.out.println();
+	}
+	//2.
+	static void add2(int[] array){
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (i + 1) * 2 - 1;
+		}
+	}
+	static void revers(int[] array) {
+        int arrayRev[] = new int[array.length];
+        for (int i = 0, j = array.length - 1; i < array.length; i++) {
+            arrayRev[i] = array[j--];
+            System.out.print(arrayRev[i] + " ");
+        }
+        System.out.println();
+    }
+	//3.
+	static int random(int min, int max){
+		return (int) Math.round(Math.random()*(max-min)+min);
+	}
+	static void addRandom(int[] array, int min, int max){
+		for (int i = 0; i < array.length; i++) {
+			array[i] = random(min, max);
+		}
+	}
+	static int[] createRandom(int length, int min, int max){
+		int[] array = new int[length];
+		addRandom(array, min, max);
+		return array;
+	}
+	static void count(int[] array){
+		int a = 0;
+		int b = 0;
+		for(int i = 0; i < array.length; i++){
+			if(array[i] > 0 && array[i] != 0 && array[i] % 2 == 0){
+				a++;
+				b = b + array[i];
+			}
+		}
+		System.out.println("Парних елементів: " + a + "\nЇх сума: " + b);	
+	}
+	//4.
+	static void change(int[] array){
+		for(int i = 0; i < array.length; i++){
+			if(array[i] % 2 == 1){
+				array[i] = 0;
+			}
+		}
+	}
+	//5.
+	static void average(int[] array1, int[] array2){
+		double a1 = 0;
+		double a2 = 0;
+		for(int i = 0; i < array1.length; i++){
+			a1 = a1 + array1[i];
+			a2 = a2 + array2[i];
+			}
+		System.out.println(a1 + " " + a2);
+		double av1 = a1 / array1.length;
+		double av2 = a2 / array2.length;
+		System.out.println(av1 + " " + av2);
+		if (av1 > av2){
+			System.out.println("Середнє значення масиву 1 більше");
+		} else if (av1 < av2){
+			System.out.println("Середнє значення масиву 2 більше");
+		} else {
+			System.out.println("Середнє значення масивів однакове");
+		}
+	}
+	//6.
+	static void increase(int[] array){
+		for(int i = 0; i < array.length; i++){
+			if(i>0){
+				if(array[i] <= array[i-1]){
+					System.out.println("Масив хз який");
+					 break;
+				}
+			}
+			if(i==array.length-1){
+				System.out.println("Масив зростаючий");
+			}
+		}
+	}
+	//7.
+	static void fibonacci(int[] array){
+		for (int i = 0; i < array.length; i++) {
+			if(i<2){
+	                array[i] = 1;
+	        } else {
+	        	array[i] = array[i-2] + array[i-1];
+            }
+            System.out.println(array[i] + " ");
+		}
+	}
+	//8.
+		static void maximal(int[] array){
+			int max = array[0];
+			int entry = 0;
+	        for (int i = 0; i < array.length; i++) {
+	            if (array[i] >= max) {
+	                max = array[i];
+	                entry = i;
+	            }
+	        }
+			System.out.println("Максимальне значення " + max);
+			System.out.println("Останнє місце входження " + entry);
+		}
+	//9.
+		static void printInt(int[] array){
+			for (int i = 0; i < array.length; i++) {
+				System.out.print(" " + array[i]+"  ");
+			}
+			System.out.println();
+		}
+		static double[] createDouble(int[] array1, int[] array2){
+			double[] array = new double[array1.length];
+			for (int i = 0; i < array.length; i++) {
+				array[i] = (double) 1.0 * array1[i] / array2[i];
+				System.out.print(array[i]+" ");
+			}
+			return array;
+		}
+}

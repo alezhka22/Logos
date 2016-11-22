@@ -1,0 +1,106 @@
+package hw2;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//System.out.println(task1());
+		//System.out.println(task2());
+		//System.out.println(task3());
+		//System.out.println(task4());
+		//System.out.println(task5());
+		//System.out.println(task6());
+		//System.out.println(task7());
+		System.out.println(task8());
+	}
+	
+	static int task1(){
+		int a = 1000;
+		while (a < 9999) {
+			System.out.println(a);
+			a = a + 4;
+		}
+		return a;
+	}
+	
+	static int task2(){
+		int b1 = 1;
+		int b2 = 1;
+		while(b1<55){
+			System.out.println(b2);
+			b1 = b1 + 1;
+			b2 = b2 + 2;
+		}
+		return b2;
+	}
+	
+	static int task3(){
+		int c = 90;
+		while(c > 0){
+			System.out.println(c);
+			c = c - 5;
+		}
+		return c;
+	}
+	static int task4(){
+		int d1 = 1;
+		int d2 = 2;
+		while (d1 < 20){
+			System.out.println(d2);
+			d2 = d2 * 2;
+			d1 = d1 + 1;
+		}
+		return d2;
+	}
+	static int task5(){
+		int e = 2;
+		while(e < 10000){
+			System.out.println(e);
+			e = 2 * e;
+		}
+		return e;
+	}
+	static int task6(){
+		int f = -166;
+		for(f=-166; f < 100; f = 2 * f + 200){
+			if(f>-100&&(f<-9||f>9)){
+				System.out.println(f);
+			}
+		}
+		return f;
+	}
+	
+	static int task7(){
+		int n;
+		int g;
+        do {
+            Scanner scan = new Scanner(System.in);
+            System.out.print("¬вед≥ть число: ");
+            n = scan.nextInt();
+            g = 1;
+            for (int i = 2; i <= n; i++){
+            	g = g * i;
+            	System.out.println(g);
+            }
+            if (n == 0 || n == 1){
+            	System.out.println(g);
+            }
+            if(n < 0){
+            System.out.println("¬ведено хибне число!");
+            }
+        } while (n < 0);
+        return g;
+    	}
+	static double task8(){
+		Scanner scan = new Scanner(System.in);
+        System.out.print("¬вед≥ть число: ");
+        double h = scan.nextInt();
+        double i = h;
+		for(; h % i == 0; i--){
+		h = h % i;
+		System.out.println(h);
+		}
+		return h;
+	}
+}

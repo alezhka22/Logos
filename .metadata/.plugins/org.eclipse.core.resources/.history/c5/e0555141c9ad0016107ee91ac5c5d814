@@ -1,0 +1,19 @@
+package core.less1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String s = "Hello I am hero";
+		System.out.println(delete(s, "e"));
+		
+	}
+	
+	static String delete(String s, String deleted){
+		while(s.contains(deleted)){
+			String newString = new String(s.substring(0,s.indexOf(deleted)));
+			
+		}
+	return newString;
+	}
+
+}

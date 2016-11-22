@@ -1,0 +1,49 @@
+package core.hw1;
+
+public class Main {
+	public static void main(String[] args) {
+		String s1 = new String("H a llo");
+		String s2 = new String("Hello");
+		System.out.println(compateTo(s1, s2));
+		System.out.println(s1.compareTo(s2));
+	}
+	static int compateTo(String s1, String s2) {
+		int compare = 0;
+		int n = s1.length() - s2.length();
+		//if (n > 0) {
+			for (int i = 0; i < s1.length() || i < s2.length(); i++) {
+				if (s1.codePointAt(i) != s2.codePointAt(i)) {
+					compare = s1.codePointAt(i) - s2.codePointAt(i);
+					return compare;
+				}
+			}
+			if (s1.length() - s2.length() != 0) {
+				compare = n;
+				return compare;
+			}
+		/*} else if (n < 0) {
+			for (int i = 0; i < s1.length(); i++) {
+				if (s1.codePointAt(i) != s2.codePointAt(i)) {
+					compare = s1.codePointAt(i) - s2.codePointAt(i);
+					return compare;
+				}
+			}
+			if (s1.length() - s2.length() != 0) {
+				compare = n;
+				return compare;
+			}
+		} else if (n == 0) {
+			for (int i = 0; i < s1.length(); i++) {
+				if (s1.codePointAt(i) != s2.codePointAt(i)) {
+					compare = s1.codePointAt(i) - s2.codePointAt(i);
+					return compare;
+				}
+			}
+			if (s1.length() - s2.length() != 0) {
+				compare = n;
+				return compare;
+			}
+		}*/
+		return compare;
+	}
+}

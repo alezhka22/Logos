@@ -1,0 +1,20 @@
+package core.less1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String s = "Hello I am hero";
+		System.out.println(delete(s, "e"));
+		
+	}
+	
+	static String delete(String s, String deleted){
+		while(s.contains(deleted)){
+			String first = s.substring(0,s.indexOf(deleted));
+			String second = s.substring(indexOf(deleted)+1);
+			s = first + second;
+		}
+		return s;
+	}
+
+}
