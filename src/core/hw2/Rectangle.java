@@ -8,7 +8,7 @@ public class Rectangle {
 		this.b = b;
 	}
 	void run(){
-		System.out.println("Периметр прямокутника = " + (a + b) * 2);
+		System.out.println("Периметр sпрямокутника = " + (a + b) * 2);
 		System.out.println("Площа прямокутника = " + (a * b));
 	}
 }
